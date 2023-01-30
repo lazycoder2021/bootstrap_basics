@@ -1,0 +1,79 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Bootstrap Example</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <style>
+
+        ul{
+            //border:1px solid red; 
+            float:right!important; /* teach why !important is used here */
+        }
+
+        .test{
+            background:tomato; 
+        }
+
+        .navbar {
+            background: tomato!important;
+        }
+
+        .navbar a{
+            color:white!important; 
+        }
+
+        @media only screen and (max-width:500px){
+            .navbar-header {
+                display:none; 
+            }
+
+            .navbar-nav {
+                width:110%; 
+                text-align:center; 
+                //border:1px solid white; 
+            }
+        }
+
+        
+
+    </style>
+</head>
+<body>
+
+    <nav class="navbar navbar-inverse test">
+        <div class="container">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="#">WebSiteName</a>
+            </div>
+            <ul class="nav navbar-nav">
+                <li class="link active"><a href="#">Home</a></li>
+                <li class="link"><a href="#">Page 1</a></li>
+                <li class="link"><a href="#">Page 2</a></li>
+                <li class="link"><a href="#">Page 3</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="container">
+        <h3>Bootstrap Navbar</h3>
+        <p>Mobile responsive navbar</p>
+    </div>
+
+    <script>
+        document.querySelectorAll('.link').forEach((l) => {
+            l.addEventListener('click', function (e) {
+                console.log(e.target.parentElement)
+                document.querySelectorAll('.link').forEach((li) => {
+                    li.classList.remove('active')
+                })
+                e.target.parentElement.classList.add('active')
+            })
+        })
+    </script>
+
+</body>
+</html>
